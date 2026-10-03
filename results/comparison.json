@@ -1,0 +1,57 @@
+[
+  {
+    "variant": "PyTorch FP32",
+    "parameters": 1175272,
+    "size_mb": 4.725,
+    "latency_ms_batch1": 4.177,
+    "throughput_wafers_per_s": 191.8,
+    "test_macro_f1": 0.9913,
+    "test_exact_match": 0.9851,
+    "size_vs_original": "1.0x smaller",
+    "speedup_vs_original": "1.0x"
+  },
+  {
+    "variant": "ONNX FP32",
+    "parameters": 1175272,
+    "size_mb": 4.702,
+    "latency_ms_batch1": 2.234,
+    "throughput_wafers_per_s": 465.9,
+    "test_macro_f1": 0.9913,
+    "test_exact_match": 0.9851,
+    "size_vs_original": "1.0x smaller",
+    "speedup_vs_original": "1.9x"
+  },
+  {
+    "variant": "ONNX INT8 (static quantization)",
+    "parameters": 1175272,
+    "size_mb": 1.211,
+    "latency_ms_batch1": 0.65,
+    "throughput_wafers_per_s": 1412.9,
+    "test_macro_f1": 0.9912,
+    "test_exact_match": 0.9847,
+    "size_vs_original": "3.9x smaller",
+    "speedup_vs_original": "6.4x"
+  },
+  {
+    "variant": "Student FP32 (distilled, ONNX)",
+    "parameters": 295032,
+    "size_mb": 1.183,
+    "latency_ms_batch1": 0.659,
+    "throughput_wafers_per_s": 1604.7,
+    "test_macro_f1": 0.9897,
+    "test_exact_match": 0.9811,
+    "size_vs_original": "4.0x smaller",
+    "speedup_vs_original": "6.3x"
+  },
+  {
+    "variant": "Student INT8 (distilled + quantized)",
+    "parameters": 295032,
+    "size_mb": 0.323,
+    "latency_ms_batch1": 0.342,
+    "throughput_wafers_per_s": 3130.7,
+    "test_macro_f1": 0.9898,
+    "test_exact_match": 0.9814,
+    "size_vs_original": "14.6x smaller",
+    "speedup_vs_original": "12.2x"
+  }
+]

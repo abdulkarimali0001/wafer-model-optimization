@@ -1,0 +1,7 @@
+torch>=2.2
+onnx
+onnxruntime
+onnxscript
+numpy
+scikit-learn
+matplotlib

@@ -1,0 +1,6 @@
+variant,parameters,size_mb,latency_ms_batch1,throughput_wafers_per_s,test_macro_f1,test_exact_match,size_vs_original,speedup_vs_original
+PyTorch FP32,1175272,4.725,4.177,191.8,0.9913,0.9851,1.0x smaller,1.0x
+ONNX FP32,1175272,4.702,2.234,465.9,0.9913,0.9851,1.0x smaller,1.9x
+ONNX INT8 (static quantization),1175272,1.211,0.65,1412.9,0.9912,0.9847,3.9x smaller,6.4x
+Student FP32 (distilled, ONNX),295032,1.183,0.659,1604.7,0.9897,0.9811,4.0x smaller,6.3x
+Student INT8 (distilled + quantized),295032,0.323,0.342,3130.7,0.9898,0.9814,14.6x smaller,12.2x

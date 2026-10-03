@@ -1,0 +1,12 @@
+teacher 1,175,272 params -> student 295,032 params
+epoch  1 | val macro-F1 0.7244 | 127s
+epoch  2 | val macro-F1 0.8456 | 135s
+epoch  3 | val macro-F1 0.9182 | 129s
+epoch  4 | val macro-F1 0.9742 | 128s
+epoch  5 | val macro-F1 0.9762 | 133s
+epoch  6 | val macro-F1 0.9864 | 133s
+epoch  7 | val macro-F1 0.9843 | 138s
+epoch  8 | val macro-F1 0.9848 | 135s
+epoch  9 | val macro-F1 0.9891 | 136s
+epoch 10 | val macro-F1 0.9894 | 134s
+best val macro-F1 0.9894
