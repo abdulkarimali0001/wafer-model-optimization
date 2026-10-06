@@ -1,6 +1,6 @@
 # On-Device Model Optimization: Quantization and Distillation
 
-Makes the [wafer defect classifier](../wafer-defect-classifier) **14.6× smaller and 12× faster** while keeping test macro-F1 within 0.2 points, using ONNX export, INT8 static quantization, and knowledge distillation. These are the techniques used to run AI on phones, cameras, and inspection equipment instead of large servers.
+Makes the [wafer defect classifier](https://github.com/abdulkarimali0001/wafer-defect-classifier) **14.6× smaller and 12× faster** while keeping test macro-F1 within 0.2 points, using ONNX export, INT8 static quantization, and knowledge distillation. These are the techniques used to run AI on phones, cameras, and inspection equipment instead of large servers.
 
 > 웨이퍼 불량 분류 모델을 ONNX 변환, INT8 정적 양자화, 지식 증류(knowledge distillation)로 경량화한 프로젝트입니다. 정확도(Macro-F1) 하락을 0.2%p 이내로 유지하면서 모델 크기를 14.6배 줄이고 추론 속도를 12배 높였습니다. 온디바이스 AI와 엣지 추론에 필요한 핵심 기술을 다룹니다.
 
@@ -43,6 +43,7 @@ Calibration data comes only from the training split, so the test score stays hon
 
 ```bash
 pip install -r requirements.txt
+# needs the dataset from https://github.com/abdulkarimali0001/wafer-defect-classifier cloned next to this folder
 DATA=../wafer-defect-classifier/data/Wafer_Map_Datasets.npz
 python src/distill.py --data $DATA --epochs 10    # about 20 minutes on CPU
 python src/optimize.py --data $DATA               # export, quantize, benchmark, plot
@@ -63,4 +64,4 @@ results/          comparison.csv, comparison.json, tradeoff.png
 
 - Quantization-aware training, to see if the student can recover its last 0.15 points.
 - Benchmark on a phone or Raspberry Pi with ONNX Runtime Mobile.
-- Serve the INT8 model from the [API project](../wafer-defect-api).
+- Serve the INT8 model from the [API project](https://github.com/abdulkarimali0001/wafer-defect-api).
